@@ -1,0 +1,13 @@
+Das Hauptziel dieses Projekts ist es, ein vielseitiges und intuitives Monitoring-Tool für Windows-Betriebssysteme zu entwickeln, das sowohl für technisch versierte Benutzer als auch für Einsteiger geeignet ist. Die erweiterten Ziele des Projekts umfassen:
+
+Detaillierte Systemüberwachung: Das Tool soll in der Lage sein, eine breite Palette von Systemmetriken zu erfassen. Dies beinhaltet die Überwachung der CPU- und GPU-Auslastung, des verfügbaren und genutzten Arbeitsspeichers oder der Festplattenaktivität. Dadurch erhalten Benutzer ein umfassendes Bild der Leistung und des Zustands ihres Computers.
+
+Anpassbare Datenerfassung und -speicherung: Benutzer sollen in der Lage sein, die Häufigkeit und Art der Datenerfassung anzupassen. Das Tool wird die gesammelten Daten sicher und effizient speichern, um eine historische Analyse zu ermöglichen. Diese Daten sollen für eine spätere Analyse oder für die Berichterstellung exportierbar sein.
+
+Grafische Darstellungen: Das Programm soll über eine Kurvenansicht verfügen, die es ermöglicht, Muster über längere Zeiträume hinweg zu erkennen. Benutzer sollen die Möglichkeit haben, verschiedene Metriken in einer einzigen Ansicht zu erfassen.
+
+Echtzeitbenachrichtigungen und Warnungen: Eine Schlüsselfunktionalität wird das Warnsystem sein. Das Tool soll Benutzer in Echtzeit benachrichtigen, wenn bestimmte Grenzwerte erreicht oder überschritten werden, wie zum Beispiel hohe CPU-Auslastung oder niedriger Speicherplatz. Dies ermöglicht es den Benutzern, proaktiv auf potenzielle Probleme zu reagieren.
+
+Benutzerfreundlichkeit und Anpassbarkeit: Das Tool soll eine benutzerfreundliche Oberfläche haben, die sowohl für Anfänger als auch für fortgeschrittene Benutzer geeignet ist.
+
+Leistung und Effizienz: Das Tool sollte effizient arbeiten, ohne dabei die Systemressourcen übermäßig zu beanspruchen. Dies ist entscheidend, um sicherzustellen, dass es auch auf weniger leistungsstarken Systemen gut funktioniert.

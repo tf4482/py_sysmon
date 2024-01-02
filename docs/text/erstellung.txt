@@ -1,0 +1,51 @@
+Projekterstellung:
+
+- Setup
+    Als erstes erstellen wir mit PyCharm ein neues Projekt. Wir nennen es „py_sysmon“ und wählen als Interpreter die Python 3.12 die aktuelleste, verfügbare Python-Version aus. Es ist „best practice“, eine virtuelle Umgebung für Python-Projekte zu verwenden. Dies hilft, Abhängigkeiten und Paketversionen spezifisch für ein Projekt zu verwalten. PyCharm sollte dies im übrigen automatisch tun, wenn ein neues Projekt erstellt wird.
+
+
+- Grundlegende Projektstruktur
+    Als erstes wird ein neues Verzeichnis „src“ im Projektverzeichnis erstellt. In diesem Verzeichnis werden alle Python-Dateien gespeichert, die für das Projekt von nöten sind. Wir erstellen auch ein Verzeichnis „tests“, in dem Tests abgelegt werden, außerdem ein Verzeichnis „docs“ für die Dokumentation.
+
+    src: Alle Python-Dateien, die für das System-Monitoring-Tool relevant sind, sollten hier abgelegt werden. Dazu gehören die Hauptanwendungsdatei (main.py), sowie Module, die verschiedene Funktionen des Tools umsetzen (z.B. Systemüberwachung, GUI-Elemente, Datenmanagement).
+
+    tests: Dieses Verzeichnis wird dazu verwendet um Unit-Tests und Integrationstests für das Projekt zu schreiben.
+
+    docs: Hier wird die Dokumentation des Projekts gespeichert. Das sind zb. die Anforderungsspezifikation, die Architektur, die Benutzerdokumentation und die Entwicklerdokumentation.
+
+
+- Erstellen der ersten Python-Datei
+    Wir erstellen eine neue Python-Datei „main.py“ im Verzeichnis „src“. Diese Datei wird die Hauptanwendung des System-Monitoring-Tools enthalten.
+
+
+- Dependencies bzw. Bibliotheken
+    Um das Projekt zu starten, müssen wir einige Bibliotheken installieren. Wir planen folgende Bibliotheken zu verwenden:
+
+    - psutil: Eine Bibliothek, die es ermöglicht, Systeminformationen zu sammeln.
+    - matplotlib: Eine Bibliothek für die Diagrammerstellung.
+    - PyQt5: PyQt5 ist eine Bibliothek, welche für die Erstellung von GUIs verwendet wird.
+    - pyqtgraph: Wird benötigt, um die Diagramme in der GUI darzustellen.
+    - pyinstaller: Bibliothek zur Kompilierung des Projekts.
+
+    Um diese Bibliotheken zu installieren, müssen wir die Datei „requirements.txt“ erstellen. Diese Datei enthält alle Bibliotheken, die für das Projekt benötigt werden. Wir können diese Datei mit dem Befehl „pip install -r requirements.txt“ installieren oder die PyCharm-Funktion „Install requirements“ nutzen. Diese requirements.txt wird üblicherweise im Hauptverzeichnis des Projekts gespeichert.
+
+
+- Versionskontrolle
+    Hoppla! Es wurde ganz vergessen ein Versionskontrollsystem zu initialisieren. Das ist aber kein Problem, denn wir können das ganz einfach nachholen. Dazu öffnen wir die Konsole und navigieren in das Projektverzeichnis. Dort führen wir den Befehl „git init“ aus.
+
+    Nun haben wir ein lokales Git-Repository erstellt. Wir können nun alle Dateien, die wir in unserem Projektverzeichnis haben, dem Repository hinzufügen. Dazu führen wir den Befehl „git add .“ aus. Der Punkt bedeutet, dass alle Dateien hinzugefügt werden sollen. Wenn wir nur bestimmte Dateien hinzufügen wollen, können wir diese auch explizit angeben. Zum Beispiel „git add main.py“.
+
+    Auch erstellen wir ein Online-Repository bei GitHub. Dort können wir unser lokales Repository hochladen. Dazu müssen wir zunächst ein neues Repository erstellen. Wir nennen es „py_sysmon“. Wir können nun die URL des Repositories kopieren und in der Konsole den Befehl „git remote add origin <URL>“ ausführen. Nun können wir die Dateien in das Online-Repository hochladen. Dazu führen wir den Befehl „git push -u origin main“ aus. Nun sind alle Dateien in unserem Online-Repository gespeichert.
+
+    Zum Thema Lizensierung: Dieses Projekt wird unter der MIT-Lizenz veröffentlicht. Diese Lizenz erlaubt es, das Projekt zu verwenden, zu kopieren, zu modifizieren, zu veröffentlichen, zu verkaufen und zu vertreiben. Es ist lediglich nötig, den Urheberrechtsvermerk und die Lizenzbedingungen in Kopien der Software beizubehalten. Die Lizenzbedingungen sind in der Datei „LICENSE“ zu finden.
+
+    Dee Datei .gitignore enthält alle Dateien, die nicht in das Repository hochgeladen werden sollen. Dazu gehören zum Beispiel die Dateien, die von PyCharm erstellt werden, sowie die Dateien, die von der Kompilierung des Projekts erstellt werden. Diese Dateien sind nicht relevant für das Projekt und sollten daher nicht in das Repository hochgeladen werden. Da wir eine JetBrains IDE verwenden, entscheiden wir uns dazu den gesamten .idea Ordner zu ignorieren. Auch .code-workspace-Dateien sehen wir zum ignorieren vor welche von Visual Studio Code für Projekte erstellt werden, falls wir uns während des Projekts dazu entscheiden sollten die IDE zu wechseln.
+
+    Die Datei README.md enthält eine kurze Beschreibung des Projekts und eine Anleitung zur Installation und Verwendung des Projekts. Diese Datei wird in der Regel im Hauptverzeichnis des Projekts gespeichert. Auch Angaben zur Lizensierung des Projekts sollten in dieser Datei enthalten sein.
+
+    An diesem Punkt erstellen wir auch die ersten Branches für das Projekt. Der Branch „main“ wurde bereits erstellt und enthält bereits die ersten zwei commits. Dazu erstellen wir den Branch „dev“. Der Branch „main“ enthält den aktuellen Stand des Projekts. Der Branch „dev“ enthält die aktuelle Entwicklungsversion des Projekts. Wenn wir neue Features entwickeln, werden wir diese in einem eigenen Branch entwickeln und dann in den Branch „dev“ mergen. Wenn wir eine neue Version des Projekts veröffentlichen wollen, mergen wir den Branch „dev“ in den Branch „main“.
+    Branches werden erstellt mit dem BEfehl „git branch <branchname>“ und gewechselt mit dem Befehl „git checkout <branchname>“.
+
+
+- Datensicherheit
+    Die Versionskontrolle mit git liefert und schon eine sehr gute Sicherheit unserer Projektdaten, zusätzlich empfiehlt es sich aber natürlich noch eine weitere Datensicherungsmethode anzuwenden, beispielsweise ein Backup-Skript. Ein Beispiel wie ein solches Skript aussehen kann findet sich im Dokumentationsverzeichniss unter misc/backup_project.bat bzw. im Anhang dieser Dokumentation. Außerdem bietet PyCharm mit der Funktion „Lokal History“ auch noch ein eigenes Versionskontrollsystem. Grundsätzlich empfiehlt es sich in der Softwareentwicklung, eigentlich allgemein in der Datenverarbeitung, immer mehrere Backuplösungen parallel zu nutzen. Besser ein Backup haben und es nicht brauchen, als es zu brauchen und nicht zu haben. Natürlich muss man auch hier abwägen zwischen Benutzbarkeit und Sicherheit, aber solange entsprechende Maßnahmen das Projekt nicht über Gebühr einschränken, spricht nichts dagegen.

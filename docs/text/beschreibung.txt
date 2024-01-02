@@ -1,0 +1,7 @@
+Ziel dieses Projekts ist es, ein nützliches und benutzerfreundliches Computerprogramm für Windows-Betriebssysteme zu entwickeln. Dieses Tool, das als "System-Monitoring-Tool" bezeichnet wird und den Projektnamen "py_sys_mon" trägt, soll folgende Anforderungen erfüllen:
+
+Überwachung von Systemdaten: Es wird wichtige Leistungsindikatoren des Computers überwachen. Dazu gehören beispielsweise die Auslastung der CPU (die zentrale Recheneinheit des Computers) oder die Menge des verwendeten Arbeitsspeichers.
+
+Darstellung der Daten: Das Programm wird in der Lage sein, die gesammelten Daten in einer übersichtlichen Weise grafisch darzustellen. Dies ermöglicht es den Benutzern, Muster leichter zu erkennen, wie zum Beispiel den Anstieg der CPU-Auslastung über einen bestimmten Zeitraum.
+
+Benutzerbenachrichtigungen: Eine wichtige Funktion des Tools wird es sein, Benutzer zu benachrichtigen, wenn bestimmte vordefinierte Grenzwerte erreicht werden. Beispielsweise könnte das Programm eine Warnung aussenden, wenn der Speicherplatz des Computers knapp wird oder die CPU über einen bestimmten Zeitraum ausgelastet ist.

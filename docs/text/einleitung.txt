@@ -1,0 +1,3 @@
+Einleitung
+
+Willkommen zum Projekt "py_sys_mon", ein Windows-System-Monitoring-Tool. Dieses PRojekt zielt darauf ab, ein Werkzeug zu entwickeln, das verschiedene Systemwerte auf einem Windows-Computer überwacht, diese Daten grafisch darstellt und den Benutzer optional bei Erreichen bestimmter, vordefinierter Werte benachrichtigt. Ziel ist es, ein benutzerfreundliches und effizientes Monitoring-Tool zu entwickeln, das für jegliche ANwender eine Mehrwert bietet.

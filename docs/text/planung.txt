@@ -1,0 +1,24 @@
+1. Vorbereitungsphase (2 Stunden)
+
+Ist- und Soll-Analyse: Festlegung der genauen Anforderungen und Ziele der App.
+Technologieentscheidung: Wahl von Python und der Benutzeroberfläche.
+
+2. Durchführungsphase (20 Stunden)
+
+Entwicklungsphase (14 Stunden):
+Anforderungsanalyse: Klärung spezifischer Monitoring-Anforderungen und Nutzererwartungen.
+Design: Entwurf der Anwendungsarchitektur und der Benutzeroberfläche.
+Implementierung: Entwicklung der Überwachungsfunktionen (CPU, RAM, Festplattenplatz, etc.) und der Benutzeroberfläche.
+Testphase (5 Stunden): Durchführung von Tests und Korrekturen.
+
+3. Abschlussphase (13 Stunden)
+
+Soll-Ist-Vergleich (2 Stunden): Überprüfung, ob die App den gestellten Anforderungen entspricht.
+Dokumentationsphase (11 Stunden): Erstellung einer ausführlichen Projektdokumentation für Benutzer und Entwickler.
+
+Wichtig:
+
+Bei der Entwicklung soll auf eine einfache und erweiterbare Struktur geachtet werden, um spätere Wartung und Erweiterungen zu erleichtern.
+Es ist möglich, dass im Projektverlauf zusätzliche Funktionen oder Anforderungen hinzukommen.
+
+Dieser Plan bietet einen strukturierten Überblick über das Projekt und ist darauf ausgerichtet, die Entwicklung innerhalb von 40 Stunden erfolgreich abzuschließen.

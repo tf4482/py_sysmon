@@ -1,0 +1,7 @@
+Werkzeuge:
+
+Beim Projekt kommen vor allem zwei wichtige Entwicklungs-Tools zum Einsatz, das Versionierungssystem "Git" ind die Entwicklungsumgebung "Pycharm". Hier eine kurze Erklärung:
+
+Git ist ein Versionierungssystem, das es Entwicklern ermöglicht, Änderungen am Code zu verfolgen und mit anderen zusammenzuarbeiten. Stellen Sie es sich wie eine Art Zeitmaschine für Programmierprojekte vor: Sie können Änderungen speichern, zu früheren Versionen zurückkehren und sehen, wer wann was geändert hat. Es ist besonders nützlich für Teams, um Konflikte zu vermeiden, wenn mehrere Personen am selben Projekt arbeiten.
+
+PyCharm ist eine Entwicklungsumgebung speziell für Python. Es ist wie ein fortschrittlicher Texteditor, der speziell für das Programmieren ausgelegt ist. PyCharm bietet viele Hilfsmittel, um den Code zu schreiben, zu testen und zu debuggen. Es erleichtert die Programmierung, indem es Funktionen wie Code-Vervollständigung, Fehlererkennung und automatische Formatierung bietet. Es ist ein Werkzeug, das den Programmierprozess effizienter und fehlerfreier macht.
