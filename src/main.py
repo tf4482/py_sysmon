@@ -40,17 +40,22 @@ class SystemMonitorWindow(QMainWindow):
         self.network_label_received.move(20, 140)
         self.network_label_received.resize(300, 20)
 
-        button_width = 80
-        button_height = 40
-        margin = 10
-
         self.close_button = QPushButton("OK", self)
+        self.close_button.resize(80, 40)
+        self.close_button.clicked.connect(self.close)
+        self.update_button_position()
+
+    def resizeEvent(self, event):
+        self.update_button_position()
+        super().resizeEvent(event)
+
+    def update_button_position(self):
+        margin = 10
+        button_width = self.close_button.width()
+        button_height = self.close_button.height()
         button_x = self.width() - button_width - margin
         button_y = self.height() - button_height - margin
-
         self.close_button.move(button_x, button_y)
-        self.close_button.resize(button_width, button_height)
-        self.close_button.clicked.connect(self.close)
 
 
 class MainController:
