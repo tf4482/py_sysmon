@@ -1,8 +1,11 @@
 import sqlite3
 
+import matplotlib.pyplot as plt
 import psutil
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
+from matplotlib.animation import FuncAnimation
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
 def get_network_activity():
@@ -45,7 +48,15 @@ class SystemMonitorWindow(QMainWindow):
         self.close_button = QPushButton("OK", self)
         self.close_button.resize(80, 40)
         self.close_button.clicked.connect(self.close)
+
+        self.show_diagram_button = QPushButton("Show Diagram", self)
+        self.show_diagram_button.move(20, 170)
+        self.show_diagram_button.clicked.connect(self.show_diagram)
+
         self.update_button_position()
+
+    def show_diagram(self):
+        self.diagram_window = DiagramWindow(self)
 
     def resizeEvent(self, event):
         self.update_button_position()
@@ -58,6 +69,19 @@ class SystemMonitorWindow(QMainWindow):
         button_x = self.width() - button_width - margin
         button_y = self.height() - button_height - margin
         self.close_button.move(button_x, button_y)
+
+
+class DiagramWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.figure, self.ax = plt.subplots()
+        self.canvas = FigureCanvas(self.figure)
+        self.setCentralWidget(self.canvas)
+        self.animation = FuncAnimation(self.figure, self.update_plot, interval=1000, cache_frame_data=False)
+        self.show()
+
+    def update_plot(self, frame):
+        self.ax.clear()
 
 
 class MainController:
