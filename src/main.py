@@ -1,6 +1,6 @@
 import psutil
 from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
 
 
 def get_network_activity():
@@ -38,6 +38,11 @@ class SystemMonitorWindow(QMainWindow):
         self.network_label_received = QLabel("Network received: ", self)
         self.network_label_received.move(20, 140)
         self.network_label_received.resize(300, 20)
+
+        self.close_button = QPushButton("Close", self)
+        self.close_button.move(500, 340)
+        self.close_button.resize(80, 40)
+        self.close_button.clicked.connect(self.close)
 
 
 class MainController:
