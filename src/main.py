@@ -70,6 +70,15 @@ class MainController:
         self.timer.timeout.connect(self.update_system_info)
         self.timer.start(1000)
 
+    def init_db(self):
+        self.conn = sqlite3.connect('py_sysmon_data.db')
+        self.cursor = self.conn.cursor()
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS cpu_usage (usage REAL)''')
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS memory_usage (usage REAL)''')
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS disk_usage (usage REAL)''')
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS sent_mb (usage REAL)''')
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS received_mb (usage REAL)''')
+
     def run(self):
         self.main_window.show()
         self.app.exec_()
@@ -88,12 +97,17 @@ class MainController:
         self.main_window.network_label_sent.setText(f"Network sent (session): {sent_mb:.2f} MB")
         self.main_window.network_label_received.setText(f"Network received (session): {received_mb: .2f} MB")
 
-        def insert_into_db(self, table, value):
-            self.conn.commit()
+        self.insert_into_db('cpu_usage', cpu_usage)
+        self.insert_into_db('memory_usage', memory_usage)
+        self.insert_into_db('disk_usage', disk_usage)
+        self.insert_into_db('sent_mb', sent_mb)
+        self.insert_into_db('received_mb', received_mb)
 
-    def init_db(self):
-        self.conn = sqlite3.connect('py_sysmon_data.db')
-        self.cursor = self.conn.cursor()
+    def insert_into_db(self, table, value):
+        self.cursor.execute(f'INSERT INTO {table} (usage) VALUES (?)', (value,))
+        self.cursor.execute(f'DELETE FROM {table} WHERE rowid NOT IN (SELECT rowid FROM {table} ORDER BY rowid DESC LIMIT 1000)')
+
+        self.conn.commit()
 
     def closeEvent(self, event):
         self.conn.close()
