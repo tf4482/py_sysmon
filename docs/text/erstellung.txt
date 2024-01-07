@@ -86,4 +86,4 @@ Projekterstellung:
     Wir haben die Anwendungslogik erweitert, um die die Speicherauslastung des Systems zu überwachen. Dazu haben wir die Funktion get_cpu_usage umbenannnt in update_system_info. Die Funktion update_system_info aktualisiert nun die CPU- und Speicherauslastung des Systems. In ähnlicher Weise fügen wir nun nach und nach weitere Funktionalitäten hinzu.
 
 - Zusätzliche UI-Elemente
-    Wir fügen der Anwendung auch einen Button hinzu (close) zum einfachen beenden. Wir platzieren ihn in der rechten unteren Ecke des Fensters.
+    Wir fügen der Anwendung auch einen Button hinzu (close) zum einfachen beenden. Wir platzieren ihn in der rechten unteren Ecke des Fensters. Wir möchten allerdings irgendwann auch noch die Dimensionen des Fensters ändern, also ändern wir die Implementierung des Buttons dahingehend, das seine Position relativ zu den vorher bestimmten Maßen des Hauptfensteres festgelegt wird.

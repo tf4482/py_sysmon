@@ -13,6 +13,7 @@ def get_network_activity():
 class SystemMonitorWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.close_button = None
         self.initUI()
 
     def initUI(self):
@@ -39,9 +40,16 @@ class SystemMonitorWindow(QMainWindow):
         self.network_label_received.move(20, 140)
         self.network_label_received.resize(300, 20)
 
-        self.close_button = QPushButton("Close", self)
-        self.close_button.move(500, 340)
-        self.close_button.resize(80, 40)
+        button_width = 80
+        button_height = 40
+        margin = 10
+
+        self.close_button = QPushButton("OK", self)
+        button_x = self.width() - button_width - margin
+        button_y = self.height() - button_height - margin
+
+        self.close_button.move(button_x, button_y)
+        self.close_button.resize(button_width, button_height)
         self.close_button.clicked.connect(self.close)
 
 
