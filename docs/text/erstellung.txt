@@ -63,4 +63,21 @@ Projekterstellung:
     Fangen wir zunächst das Fenster der Anwendung zu implementieren. Wir entscheiden uns zunächst für eine initiale Größe von 600 mal 400 Pixeln und legen einen festen Punkt uf dem Biildschirm fest, wo das Fenster der Anwendung bei Programmstart erscheint, das sind die x und y Koordinaten 100. Auch definieren wir an dieser Stelle den Titel des Fensters ("py_sysmon"). Das erste Label wird auch hier festgelegt ("CPU Usage").
     Davor haben wir auch die ersten Module und Klassen die wir zunächst brauchen impoprtiert. Wir commiten die Änderungen und pushen sie in den Branch "dev".
 
+    Mithilfe der psutil-Bibliothek haben wir die Funktion get_cpu_usage programmiert. Diese Funktion holt uns die aktuelle CPU-Auslastung in Prozent.
+    Die MainController-Klasse, die wir neu hinzugefügt haben, kümmert sich darum, dass die CPU-Auslastung auch im Fenster angezeigt wird. Die Methode update_cpu_usage aktualisiert regelmäßig das Label mit den neuesten Daten zur CPU-Auslastung.
 
+- Starten der Anwendung:
+    Der Abschnitt if __name__ == "__main__": ist unser Startsignal. Hier wird MainController aktiviert und die Anwendung startet mit der Darstellung der Systeminformationen.
+
+-Aktualisierung der Anwendungslogik:
+    Nachdem wir das Grundgerüst unserer Anwendung etabliert hatten, konzentrierten wir uns darauf, die Logik zur Überwachung der Systemleistung zu verfeinern und zu erweitern.
+
+    Um eine regelmäßige Aktualisierung der Systeminformationen zu gewährleisten, haben wir die QTimer-Klasse aus PyQt5 eingeführt. Dieser Timer wird verwendet, um die CPU-Auslastung jede Sekunde zu aktualisieren, was eine kontinuierliche Überwachung ermöglicht.
+
+    In der MainController-Klasse haben wir den QTimer konfiguriert und mit unserer update_cpu_usage-Methode verbunden. Der Timer sendet alle 1000 Millisekunden (1 Sekunde) ein Signal, das diese Methode aufruft, um die CPU-Auslastung zu ermitteln und das Label in unserem Hauptfenster entsprechend zu aktualisieren.
+
+- Optimierung der Update-Methode:
+    Die update_cpu_usage-Methode wurde dahingehend optimiert, dass sie direkt auf die psutil.cpu_percent()-Funktion zugreift, ohne ein Intervall zu benötigen. Dies verbessert die Effizienz der Methode und gewährleistet, dass die CPU-Auslastungsinformationen in Echtzeit aktualisiert werden.
+
+- Verbesserung der Anwendungsleistung:
+    Durch die Verwendung des Timers stellen wir sicher, dass unsere Anwendung effizient und reaktionsfähig bleibt. Da die update_cpu_usage-Methode jetzt durch den Timer gesteuert wird, verhindern wir blockierende Aufrufe und ermöglichen eine flüssigere Benutzererfahrung. Diese Verbesserungen tragen zur Stabilität und Effizienz der Anwendung bei und ermöglichen eine genauere und zuverlässigere Überwachung der Systemleistung. Durch die kontinuierliche Aktualisierung der CPU-Auslastung kann der Benutzer die Leistung seines Systems in Echtzeit überwachen.

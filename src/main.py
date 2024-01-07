@@ -17,3 +17,23 @@ class SystemMonitorWindow(QMainWindow):
         self.label = QLabel("CPU Usage: ", self)
         self.label.move(20, 20)
         self.label.resize(200, 20)
+
+
+class MainController:
+    def __init__(self):
+        self.app = QApplication([])
+        self.main_window = SystemMonitorWindow()
+
+    def run(self):
+        self.update_cpu_usage()
+        self.main_window.show()
+        self.app.exec_()
+
+    def update_cpu_usage(self):
+        cpu_usage = get_cpu_usage()
+        self.main_window.label.setText(f"CPU usage: {cpu_usage}%")
+
+
+if __name__ == "__main__":
+    controller = MainController()
+    controller.run()
