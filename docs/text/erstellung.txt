@@ -25,7 +25,7 @@ Projekterstellung:
     - matplotlib: Eine Bibliothek für die Diagrammerstellung.
     - PyQt5: PyQt5 ist eine Bibliothek, welche für die Erstellung von GUIs verwendet wird.
     - pyqtgraph: Wird benötigt, um die Diagramme in der GUI darzustellen.
-    - pyinstaller: Bibliothek zur Kompilierung des Projekts.
+    - pyinstaller: Bibliothek zur Bündelung des Projekts.
 
     Um diese Bibliotheken zu installieren, müssen wir die Datei „requirements.txt“ erstellen. Diese Datei enthält alle Bibliotheken, die für das Projekt benötigt werden. Wir können diese Datei mit dem Befehl „pip install -r requirements.txt“ installieren oder die PyCharm-Funktion „Install requirements“ nutzen. Diese requirements.txt wird üblicherweise im Hauptverzeichnis des Projekts gespeichert.
 
@@ -49,3 +49,18 @@ Projekterstellung:
 
 - Datensicherheit
     Die Versionskontrolle mit git liefert und schon eine sehr gute Sicherheit unserer Projektdaten, zusätzlich empfiehlt es sich aber natürlich noch eine weitere Datensicherungsmethode anzuwenden, beispielsweise ein Backup-Skript. Ein Beispiel wie ein solches Skript aussehen kann findet sich im Dokumentationsverzeichniss unter misc/backup_project.bat bzw. im Anhang dieser Dokumentation. Außerdem bietet PyCharm mit der Funktion „Lokal History“ auch noch ein eigenes Versionskontrollsystem. Grundsätzlich empfiehlt es sich in der Softwareentwicklung, eigentlich allgemein in der Datenverarbeitung, immer mehrere Backuplösungen parallel zu nutzen. Besser ein Backup haben und es nicht brauchen, als es zu brauchen und nicht zu haben. Natürlich muss man auch hier abwägen zwischen Benutzbarkeit und Sicherheit, aber solange entsprechende Maßnahmen das Projekt nicht über Gebühr einschränken, spricht nichts dagegen.
+
+
+- MVC-Modell
+    Wir haben uns entschieden, das MVC-Modell für die Architektur unseres Projekts zu verwenden. MVC steht für Modell-View-Controller. Das Modell ist für die Datenverwaltung verantwortlich. Es enthält die Daten, die von der Anwendung verarbeitet werden. Die View ist für die Darstellung der Daten zuständig. Sie enthält die Benutzeroberfläche, die dem Benutzer angezeigt wird. Der Controller ist für die Datenverarbeitung verantwortlich. Er enthält die Logik, die die Daten verarbeitet.
+
+    Das MVC-Modell ist ein weit verbreitetes Modell für die Softwarearchitektur. Es eignet sich sehr gut für die Entwicklung von GUI-Anwendungen. Es ermöglicht eine klare Trennung zwischen Datenverwaltung, Datenverarbeitung und Präsentation. Dadurch verbessert sich die Wartbarkeit und Erweiterbarkeit der Software. Außerdem ermöglicht es eine parallele Entwicklung der verschiedenen Komponenten.
+
+    Insgesamt ist das MVC-Modell eine ausgezeichnete Wahl für die Entwicklung von GUI-Anwendungen, da es die genannten Vorteile bietet.
+
+
+- Programmieren
+    Fangen wir zunächst das Fenster der Anwendung zu implementieren. Wir entscheiden uns zunächst für eine initiale Größe von 600 mal 400 Pixeln und legen einen festen Punkt uf dem Biildschirm fest, wo das Fenster der Anwendung bei Programmstart erscheint, das sind die x und y Koordinaten 100. Auch definieren wir an dieser Stelle den Titel des Fensters ("py_sysmon"). Das erste Label wird auch hier festgelegt ("CPU Usage").
+    Davor haben wir auch die ersten Module und Klassen die wir zunächst brauchen impoprtiert. Wir commiten die Änderungen und pushen sie in den Branch "dev".
+
+
