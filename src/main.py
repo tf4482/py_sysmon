@@ -11,9 +11,14 @@ class SystemMonitorWindow(QMainWindow):
     def initUI(self):
         self.setWindowTitle("py_sysmon")
         self.setGeometry(100, 100, 600, 400)
-        self.label = QLabel("CPU Usage: ", self)
-        self.label.move(20, 20)
-        self.label.resize(200, 20)
+
+        self.cpu_label = QLabel("CPU Usage: ", self)
+        self.cpu_label.move(20, 20)
+        self.cpu_label.resize(200, 20)
+
+        self.memory_label = QLabel("RAM Usage: ", self)
+        self.memory_label.move(20, 50)
+        self.memory_label.resize(200, 20)
 
 
 class MainController:
@@ -22,17 +27,20 @@ class MainController:
         self.main_window = SystemMonitorWindow()
 
         self.timer = QTimer()
-        self.timer.timeout.connect(self.get_cpu_usage)
+        self.timer.timeout.connect(self.update_system_info)
         self.timer.start(1000)
 
     def run(self):
         self.main_window.show()
         self.app.exec_()
 
-    def get_cpu_usage(self):
+    def update_system_info(self):
         cpu_usage = psutil.cpu_percent()
+        memory_usage = psutil.virtual_memory()
+        memory_usage = memory_usage.percent
 
-        self.main_window.label.setText(f"CPU usage: {cpu_usage}%")
+        self.main_window.cpu_label.setText(f"CPU usage: {cpu_usage}%")
+        self.main_window.memory_label.setText(f"RAM usage: {memory_usage}%")
 
 
 if __name__ == "__main__":

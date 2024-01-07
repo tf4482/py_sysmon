@@ -81,3 +81,6 @@ Projekterstellung:
 
 - Verbesserung der Anwendungsleistung:
     Durch die Verwendung des Timers stellen wir sicher, dass unsere Anwendung effizient und reaktionsfähig bleibt. Da die update_cpu_usage-Methode jetzt durch den Timer gesteuert wird, verhindern wir blockierende Aufrufe und ermöglichen eine flüssigere Benutzererfahrung. Diese Verbesserungen tragen zur Stabilität und Effizienz der Anwendung bei und ermöglichen eine genauere und zuverlässigere Überwachung der Systemleistung. Durch die kontinuierliche Aktualisierung der CPU-Auslastung kann der Benutzer die Leistung seines Systems in Echtzeit überwachen.
+
+- Erweiterung der Anwendungslogik
+    Wir haben die Anwendungslogik erweitert, um die die Speicherauslastung des Systems zu überwachen. Dazu haben wir die Funktion get_cpu_usage umbenannnt in update_system_info. Die Funktion update_system_info aktualisiert nun die CPU- und Speicherauslastung des Systems. 
