@@ -77,7 +77,7 @@ Projekterstellung:
     In der MainController-Klasse haben wir den QTimer konfiguriert und mit unserer update_cpu_usage-Methode verbunden. Der Timer sendet alle 1000 Millisekunden (1 Sekunde) ein Signal, das diese Methode aufruft, um die CPU-Auslastung zu ermitteln und das Label in unserem Hauptfenster entsprechend zu aktualisieren.
 
 - Optimierung der Update-Methode:
-    Die update_cpu_usage-Methode wurde dahingehend optimiert, dass sie direkt auf die psutil.cpu_percent()-Funktion zugreift, ohne ein Intervall zu benötigen. Dies verbessert die Effizienz der Methode und gewährleistet, dass die CPU-Auslastungsinformationen in Echtzeit aktualisiert werden.
+    Die update_cpu_usage-Methode wurde dahingehend optimiert, dass sie direkt auf die psutil.cpu_percent()-Funktion zugreift, ohne ein Intervall zu benötigen. Dies verbessert die Effizienz der Methode und gewährleistet, dass die CPU-Auslastungsinformationen in Echtzeit aktualisiert werden. Die alte get_cpu_usage-Methode wurde entfernt, da sie nicht mehr benötigt wird.
 
 - Verbesserung der Anwendungsleistung:
     Durch die Verwendung des Timers stellen wir sicher, dass unsere Anwendung effizient und reaktionsfähig bleibt. Da die update_cpu_usage-Methode jetzt durch den Timer gesteuert wird, verhindern wir blockierende Aufrufe und ermöglichen eine flüssigere Benutzererfahrung. Diese Verbesserungen tragen zur Stabilität und Effizienz der Anwendung bei und ermöglichen eine genauere und zuverlässigere Überwachung der Systemleistung. Durch die kontinuierliche Aktualisierung der CPU-Auslastung kann der Benutzer die Leistung seines Systems in Echtzeit überwachen.

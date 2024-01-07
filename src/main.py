@@ -1,9 +1,6 @@
 import psutil
+from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
-
-
-def get_cpu_usage():
-    return psutil.cpu_percent(interval=1)
 
 
 class SystemMonitorWindow(QMainWindow):
@@ -24,13 +21,17 @@ class MainController:
         self.app = QApplication([])
         self.main_window = SystemMonitorWindow()
 
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.get_cpu_usage)
+        self.timer.start(1000)
+
     def run(self):
-        self.update_cpu_usage()
         self.main_window.show()
         self.app.exec_()
 
-    def update_cpu_usage(self):
-        cpu_usage = get_cpu_usage()
+    def get_cpu_usage(self):
+        cpu_usage = psutil.cpu_percent()
+
         self.main_window.label.setText(f"CPU usage: {cpu_usage}%")
 
 
