@@ -1,3 +1,5 @@
+import sqlite3
+
 import psutil
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
@@ -62,6 +64,7 @@ class MainController:
     def __init__(self):
         self.app = QApplication([])
         self.main_window = SystemMonitorWindow()
+        self.init_db()
 
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_system_info)
@@ -84,6 +87,17 @@ class MainController:
         self.main_window.disk_label.setText(f"Disk usage (system-partition): {disk_usage}%")
         self.main_window.network_label_sent.setText(f"Network sent (session): {sent_mb:.2f} MB")
         self.main_window.network_label_received.setText(f"Network received (session): {received_mb: .2f} MB")
+
+        def insert_into_db(self, table, value):
+            self.conn.commit()
+
+    def init_db(self):
+        self.conn = sqlite3.connect('py_sysmon_data.db')
+        self.cursor = self.conn.cursor()
+
+    def closeEvent(self, event):
+        self.conn.close()
+        super().closeEvent(event)
 
 
 if __name__ == "__main__":
