@@ -64,7 +64,7 @@ Projekterstellung:
     Davor haben wir auch die ersten Module und Klassen die wir zunächst brauchen impoprtiert. Wir commiten die Änderungen und pushen sie in den Branch "dev".
 
     Mithilfe der psutil-Bibliothek haben wir die Funktion get_cpu_usage programmiert. Diese Funktion holt uns die aktuelle CPU-Auslastung in Prozent.
-    Die MainController-Klasse, die wir neu hinzugefügt haben, kümmert sich darum, dass die CPU-Auslastung auch im Fenster angezeigt wird. Die Methode update_cpu_usage aktualisiert regelmäßig das Label mit den neuesten Daten zur CPU-Auslastung.
+    Die MainController-Klasse, die wir neu hinzugefügt haben, kümmert sich darum, dass die CPU-Auslastung auch im Fenster angezeigt wird. Die Methode get_cpu_usage aktualisiert regelmäßig das Label mit den neuesten Daten zur CPU-Auslastung.
 
 - Starten der Anwendung:
     Der Abschnitt if __name__ == "__main__": ist unser Startsignal. Hier wird MainController aktiviert und die Anwendung startet mit der Darstellung der Systeminformationen.
