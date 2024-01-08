@@ -14,7 +14,6 @@ Features
     Graphical user interface using PyQt
     Data visualization with pyqtgraph
     Standalone application generation with PyInstaller
-    Customizable alerts for specific system thresholds
 
 Getting Started
 
@@ -39,6 +38,10 @@ Usage
 Run the main.py script to start the application:
 
     python src/main.py
+
+Or use /build.bat to create a standalone executable with PyInstaller (which will be installed automatically if not present):
+
+    build.bat
 
 Contributing
 
