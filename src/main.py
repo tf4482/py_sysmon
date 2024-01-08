@@ -80,8 +80,29 @@ class DiagramWindow(QMainWindow):
         self.animation = FuncAnimation(self.figure, self.update_plot, interval=1000, cache_frame_data=False)
         self.show()
 
+    def fetch_data(self, table):
+        conn = sqlite3.connect('py_sysmon_data.db')
+        cursor = conn.cursor()
+        cursor.execute(f'SELECT usage FROM {table} ORDER BY rowid DESC LIMIT 1000')
+        data = cursor.fetchall()
+        conn.close()
+        return [d[0] for d in data]
+
     def update_plot(self, frame):
         self.ax.clear()
+        cpu_usage = self.fetch_data('cpu_usage')
+        memory_usage = self.fetch_data('memory_usage')
+        disk_usage = self.fetch_data('disk_usage')
+
+        if cpu_usage:
+            self.ax.plot(cpu_usage, label='CPU Usage', color='red')
+        if memory_usage:
+            self.ax.plot(memory_usage, label='Memory Usage', color='blue')
+        if disk_usage:
+            self.ax.plot(disk_usage, label='Disk Usage', color='green')
+
+        self.ax.legend()
+        self.canvas.draw()
 
 
 class MainController:
@@ -136,6 +157,10 @@ class MainController:
     def closeEvent(self, event):
         self.conn.close()
         super().closeEvent(event)
+
+    def show_diagram(self):
+        self.diagram_window = DiagramWindow(self)
+        self.diagram_window.show()
 
 
 if __name__ == "__main__":
