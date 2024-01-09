@@ -1,7 +1,11 @@
-Werkzeuge:
-
-Beim Projekt kommen vor allem zwei wichtige Entwicklungs-Tools zum Einsatz, das Versionierungssystem "Git" ind die Entwicklungsumgebung "Pycharm". Hier eine kurze Erklärung:
-
-Git ist ein Versionierungssystem, das es Entwicklern ermöglicht, Änderungen am Code zu verfolgen und mit anderen zusammenzuarbeiten. Stellen Sie es sich wie eine Art Zeitmaschine für Programmierprojekte vor: Sie können Änderungen speichern, zu früheren Versionen zurückkehren und sehen, wer wann was geändert hat. Es ist besonders nützlich für Teams, um Konflikte zu vermeiden, wenn mehrere Personen am selben Projekt arbeiten.
-
+Werkzeuge
+Beim Projekt kommen vor allem drei wichtige Entwicklungs-Tools zum Einsatz, das Versionierungssystem „Git“, die dazugehörige Plattform Github und die Entwicklungsumgebung „Pycharm“.
 PyCharm ist eine Entwicklungsumgebung speziell für Python. Es ist wie ein fortschrittlicher Texteditor, der speziell für das Programmieren ausgelegt ist. PyCharm bietet viele Hilfsmittel, um den Code zu schreiben, zu testen und zu debuggen. Es erleichtert die Programmierung, indem es Funktionen wie Code-Vervollständigung, Fehlererkennung und automatische Formatierung bietet. Es ist ein Werkzeug, das den Programmierprozess effizienter und fehlerfreier macht.
+
+Git ist ein Versionierungssystem, dass es Entwicklern ermöglicht, Änderungen am Code zu verfolgen und mit anderen zusammenzuarbeiten. Stellen Sie es sich wie eine Art Zeitmaschine für Programmierprojekte vor: Sie können Änderungen speichern, zu früheren Versionen zurückkehren und sehen, wer wann was geändert hat. Es ist besonders nützlich für Teams, um Konflikte zu vermeiden, wenn mehrere Personen am selben Projekt arbeiten.
+
+GitHub ist eine Plattform, die Hosting für Software-Entwicklungsprojekte bietet. Es verwendet Git für die Versionierung und ermöglicht es, Repositories online zu speichern („Remote Repositories“). GitHub erleichtert die Zusammenarbeit in Teams. Teammitglieder können auf gemeinsame Repositories zugreifen, Änderungen vornehmen und diese Änderungen mit anderen teilen. Ein zentrales Feature von GitHub sind Pull Requests. Sie ermöglichen es Entwicklern, Änderungen vorzuschlagen und zu diskutieren, bevor sie in den Hauptcode integriert werden. GitHub bietet auch Werkzeuge für das Verfolgen von Problemen („Issues“), was die Organisation und Priorisierung von Aufgaben in einem Projekt erleichtert.
+Interaktion zwischen Git und GitHub
+Push und Pull: Entwickler können Änderungen aus ihrem lokalen Repository auf GitHub „pushen“ (hochladen). Ebenso können sie Änderungen von GitHub „pullen“ (herunterladen), um lokal am neuesten Stand des Projekts zu arbeiten.
+Code Reviews: Durch die Integration von Git in GitHub können Code-Änderungen durch andere Teammitglieder überprüft werden, bevor sie in den Hauptcode integriert werden.
+Automatisierung: Viele Entwicklungsprozesse (wie das Ausführen von Tests oder das Deployen von Code) können durch die Integration von Git und GitHub automatisiert werden. Insgesamt bietet die Kombination aus Git und GitHub ein mächtiges Werkzeugset für moderne Softwareentwicklung, dass die Kollaboration, Codeverwaltung und Qualitätssicherung wesentlich verbessert.
