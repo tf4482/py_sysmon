@@ -49,8 +49,5 @@ As this is a project for educational purposes, contributions, issues, and featur
 License
 
 Distributed under the MIT License. See LICENSE for more information.
-Contact
-
-tf4482@gmail.com
 
 Project Link: https://github.com/tf4482/py_sysmon
