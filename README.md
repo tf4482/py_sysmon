@@ -15,6 +15,8 @@ Features
     Data visualization with pyqtgraph
     Standalone application generation with PyInstaller
 
+![diagram py](https://github.com/tf4482/py_sysmon/assets/107394980/dc32b501-425c-44cd-ab39-9e79a83f1316)
+
 Getting Started
 
 To get a local copy up and running, follow these simple steps.
